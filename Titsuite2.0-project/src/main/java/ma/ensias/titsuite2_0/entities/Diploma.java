@@ -1,57 +1,27 @@
-package com.sample;
+package ma.ensias.titsuite2_0.entities;
 
 
+import lombok.Getter;
+import lombok.Setter;
+import javax.persistence.*;
+
+@Entity
+@Table(name = "diploma")
+@Setter @Getter
 public class Diploma {
 
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private long id;
+
   private String name;
+
+  @Column(name = "acquisition_date")
   private java.sql.Date acquisitionDate;
+
   private String field;
+
+  @Column(name = "freelancer_ref")
   private long freelancerRef;
-
-
-  public long getId() {
-    return id;
-  }
-
-  public void setId(long id) {
-    this.id = id;
-  }
-
-
-  public String getName() {
-    return name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
-
-
-  public java.sql.Date getAcquisitionDate() {
-    return acquisitionDate;
-  }
-
-  public void setAcquisitionDate(java.sql.Date acquisitionDate) {
-    this.acquisitionDate = acquisitionDate;
-  }
-
-
-  public String getField() {
-    return field;
-  }
-
-  public void setField(String field) {
-    this.field = field;
-  }
-
-
-  public long getFreelancerRef() {
-    return freelancerRef;
-  }
-
-  public void setFreelancerRef(long freelancerRef) {
-    this.freelancerRef = freelancerRef;
-  }
 
 }
