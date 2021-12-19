@@ -1,12 +1,15 @@
 package ma.ensias.titsuite2_0.entities;
 
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
+
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
-@Table(name = "freelancer")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Setter @Getter
 public class Freelancer {
 
@@ -54,5 +57,11 @@ public class Freelancer {
 
   @Column(name = "resend_timeout")
   private java.sql.Date resendTimeout;
+
+  @OneToMany
+  private Set<Diploma> diplomas;
+
+  @OneToMany
+  private Set<Job> jobs;
 
 }

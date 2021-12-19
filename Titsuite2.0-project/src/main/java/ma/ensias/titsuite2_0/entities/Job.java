@@ -16,10 +16,13 @@ public class Job {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private long id;
 
-  private long reffreelancer;
+  @ManyToOne
+  private Freelancer freelancer;
 
-  private long refrate;
+  @OneToOne
+  private Rate rate;
 
-  private long refoffer;
+  @ManyToOne
+  private Offer offer;
 
 }

@@ -31,4 +31,6 @@ public class Offer {
 
   private String activity;
 
+
+
 }

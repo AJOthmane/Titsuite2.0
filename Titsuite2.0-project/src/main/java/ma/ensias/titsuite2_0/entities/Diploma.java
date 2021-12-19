@@ -21,7 +21,7 @@ public class Diploma {
 
   private String field;
 
-  @Column(name = "freelancer_ref")
-  private long freelancerRef;
+  @ManyToOne
+  private Freelancer freelancer;
 
 }

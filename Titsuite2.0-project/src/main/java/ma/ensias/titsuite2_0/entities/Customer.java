@@ -1,7 +1,7 @@
 package ma.ensias.titsuite2_0.entities;
 
-
 import lombok.*;
+import ma.ensias.titsuite2_0.enums.Subscription;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -38,7 +38,8 @@ public class Customer {
 
   private String address;
 
-  private String subscription;
+  @Enumerated(EnumType.STRING)
+  private Subscription subscription;
 
   @Column(name = "refresh_token")
   private String refreshToken;
