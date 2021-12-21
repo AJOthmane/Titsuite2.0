@@ -1,0 +1,21 @@
+package ma.ensias.titsuite2_0.controllers;
+
+import ma.ensias.titsuite2_0.entities.Job;
+import ma.ensias.titsuite2_0.services.JobService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+
+@RestController
+public class JobController {
+    @Autowired
+    JobService jobService;
+
+    @GetMapping("/myjobs/all")
+    List<Job> getMyJobs(){
+        int idForTest =1; // This id should be returned by JWT
+        return jobService.findMyJobs(idForTest);
+    }
+}

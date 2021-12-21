@@ -8,11 +8,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Titsuite2_0" />
+        <module name="Titsuite2.0-project" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Titsuite2.0-project" options="-parameters" />
       <module name="Titsuite2_0" options="-parameters" />
     </option>
   </component>
