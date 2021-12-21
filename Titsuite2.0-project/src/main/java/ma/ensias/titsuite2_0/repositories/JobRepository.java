@@ -11,7 +11,7 @@ import java.util.List;
 @Repository
 public interface JobRepository extends JpaRepository<Job, Integer> {
 
-    @Query(value = "select J.* from job J, freelancer F, freelancer_jobs FJ where F.ID = :freelancerID and FJ.freelancer_id = F.ID and FJ.jobs_id = J.ID;",
+    @Query(value = "select J.* from job J, freelancer F where F.ID = :freelancerID and J.freelancer_id = F.ID;",
             nativeQuery = true)
     List<Job> findMyJobsByFreelancer(@Param("freelancerID") int freelancerID);
 }
