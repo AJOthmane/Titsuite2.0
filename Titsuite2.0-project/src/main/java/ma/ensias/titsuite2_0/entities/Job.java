@@ -22,7 +22,7 @@ public class Job {
   @OneToOne
   private Rate rate;
 
-  @ManyToOne
+  @OneToOne
   private Offer offer;
 
 }
