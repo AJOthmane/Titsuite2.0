@@ -13,6 +13,7 @@ public class JobService {
     JobRepository jobRepository;
 
     public List<Job> findMyJobs(int freelancerId){
+
         return jobRepository.findMyJobsByFreelancer(freelancerId);
     }
 }
