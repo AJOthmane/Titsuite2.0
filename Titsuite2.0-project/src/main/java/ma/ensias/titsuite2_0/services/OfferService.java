@@ -15,11 +15,22 @@ public class OfferService {
 
     public List<Offer> getAllOffers()
     {
+
         return offerRepository.findAll();
     }
     public List<Offer> getOffersByCity(String city)
     {
+
         return offerRepository.findByCity(city);
     }
 
+    public Offer getOffer(Long id)
+    {
+        return offerRepository.findById(id).orElse(null);
+    }
+
+    public List<Offer> getOffersByActivity(String activity)
+    {
+        return offerRepository.findByActivity(activity);
+    }
 }

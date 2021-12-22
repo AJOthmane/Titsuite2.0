@@ -15,16 +15,27 @@ public class OfferController {
     @Autowired
     OfferService offerService;
 
-
     @GetMapping("/offers/all")
     List<Offer> getAllOffers()
     {
+
         return offerService.getAllOffers();
     }
-    @GetMapping("/offers/{city}")
+    @GetMapping("/offers/city/{city}")
     List<Offer> getAllOffers(@PathVariable String city)
     {
+
         return offerService.getOffersByCity(city);
+    }
+    @GetMapping("/offers/id/{id}")
+    Offer getOfferByID(@PathVariable Long id)
+    {
+        return offerService.getOffer(id);
+    }
+    @GetMapping("/offers/activity/{activity}")
+    List<Offer>  getOfferByID(@PathVariable String activity)
+    {
+        return offerService.getOffersByActivity(activity);
     }
 
 
