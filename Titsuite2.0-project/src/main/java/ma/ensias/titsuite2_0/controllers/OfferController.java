@@ -33,9 +33,15 @@ public class OfferController {
         return offerService.getOffer(id);
     }
     @GetMapping("/offers/activity/{activity}")
-    List<Offer>  getOfferByID(@PathVariable String activity)
+    List<Offer>  getOfferByActivity(@PathVariable String activity)
     {
         return offerService.getOffersByActivity(activity);
+    }
+    @GetMapping("/offers/myoffers")
+    List<Offer> getMyOffers()
+    {
+        Long idUser = 1L;
+        return offerService.getOffers(idUser);
     }
 
 
