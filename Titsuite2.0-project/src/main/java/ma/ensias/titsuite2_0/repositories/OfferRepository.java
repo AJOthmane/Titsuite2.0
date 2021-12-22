@@ -12,9 +12,6 @@ public interface OfferRepository extends JpaRepository<Offer,Long>
 {
         List<Offer> findByCity(String city);
         List<Offer> findByActivity(String activity);
-
-//        @Query(value = "select O.* from offer O where O.customer_id = :id ;",
-//                nativeQuery = true)
         List<Offer> findAllByCustomerId(Long id);
 
 }

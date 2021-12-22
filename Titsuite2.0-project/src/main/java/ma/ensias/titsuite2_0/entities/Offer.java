@@ -4,6 +4,8 @@ package ma.ensias.titsuite2_0.entities;
 import lombok.*;
 
 import javax.persistence.*;
+import java.beans.ConstructorProperties;
+import java.sql.Date;
 
 @Entity
 @Data
@@ -31,6 +33,13 @@ public class Offer {
 
   private String activity;
 
-
-
+  public Offer(String description, String city, long minimumwage, String status, Customer customer, Date startday, String activity) {
+    this.description = description;
+    this.city = city;
+    this.minimumwage = minimumwage;
+    this.status = status;
+    this.customer = customer;
+    this.startday = startday;
+    this.activity = activity;
+  }
 }

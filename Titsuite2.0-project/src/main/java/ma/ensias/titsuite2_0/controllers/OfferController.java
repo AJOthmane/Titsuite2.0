@@ -1,11 +1,10 @@
 package ma.ensias.titsuite2_0.controllers;
 
 import ma.ensias.titsuite2_0.entities.Offer;
+import ma.ensias.titsuite2_0.model.OfferForm;
 import ma.ensias.titsuite2_0.services.OfferService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -42,6 +41,11 @@ public class OfferController {
     {
         Long idUser = 1L;
         return offerService.getOffers(idUser);
+    }
+    @PostMapping("/offers/new")
+    Boolean createOffer(@RequestBody OfferForm data)
+    {
+        return offerService.createOffer(data);
     }
 
 
