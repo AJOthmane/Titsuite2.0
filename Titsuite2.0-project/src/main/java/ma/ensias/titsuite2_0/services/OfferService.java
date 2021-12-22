@@ -28,6 +28,10 @@ public class OfferService {
     {
         return offerRepository.findById(id).orElse(null);
     }
+    public List<Offer> getOffers(Long id)
+    {
+        return offerRepository.findAllByCustomerId(id);
+    }
 
     public List<Offer> getOffersByActivity(String activity)
     {
