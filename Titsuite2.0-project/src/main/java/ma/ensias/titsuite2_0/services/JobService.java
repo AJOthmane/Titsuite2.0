@@ -16,4 +16,9 @@ public class JobService {
 
         return jobRepository.findMyJobsByFreelancer(freelancerId);
     }
+
+    public List<Job> getAllJobs() {
+
+        return jobRepository.findAll();
+    }
 }
