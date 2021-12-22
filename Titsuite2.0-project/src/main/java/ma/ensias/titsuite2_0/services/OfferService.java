@@ -81,4 +81,36 @@ public class OfferService {
             return false;
         }
     }
+    public boolean updateOffre(OfferForm data,Long id)
+    {
+        String activity = data.getActivity(),
+                city = data.getCity(),
+                status = data.getStatus(),
+                description = data.getDescription();
+        Long minimumwage = data.getMinimumwage();
+        java.sql.Date startDay = data.getStartDay();
+
+        Offer offer = offerRepository.findById(id).orElse(null);
+        if(offer != null)
+        {
+            if(activity != null && !activity.equals(""))
+                offer.setActivity(activity);
+            if(city != null && !city.equals(""))
+                offer.setCity(city);
+            if(startDay != null)
+                offer.setStartday(startDay);
+            if(status != null && !status.equals(""))
+                offer.setStatus(status);
+            if(description != null && !description.equals(""))
+                offer.setDescription(description);
+            if(Long.valueOf(minimumwage) != null && minimumwage > 0)
+                offer.setMinimumwage(minimumwage);
+
+            offerRepository.save(offer);
+            return true;
+        }
+        else return false;
+
+
+    }
 }

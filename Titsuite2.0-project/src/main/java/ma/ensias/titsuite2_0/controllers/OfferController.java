@@ -47,6 +47,11 @@ public class OfferController {
     {
         return offerService.createOffer(data);
     }
+    @PostMapping("/offers/update/{id}")
+    Boolean createOffer(@RequestBody OfferForm data,@PathVariable long id)
+    {
+        return offerService.updateOffre(data,id);
+    }
 
 
 }
