@@ -15,7 +15,11 @@ public class JobController {
 
     @GetMapping("/myjobs/all")
     List<Job> getMyJobs(){
-        int idForTest =1; // This id should be returned by JWT
+        int idForTest =2; // This id should be returned by JWT
         return jobService.findMyJobs(idForTest);
+    }
+    @GetMapping("/jobs/all")
+    List<Job> getAllJobs(){
+        return jobService.getAllJobs();
     }
 }
