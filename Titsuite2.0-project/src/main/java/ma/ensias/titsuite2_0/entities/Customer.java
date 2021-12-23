@@ -4,6 +4,7 @@ import lombok.*;
 import ma.ensias.titsuite2_0.enums.Subscription;
 
 import javax.persistence.*;
+import java.sql.Date;
 import java.util.Set;
 
 @Entity
@@ -59,4 +60,15 @@ public class Customer {
   @OneToMany
   private Set<Offer> offers;
 
+  public Customer(String email, String hashedPassword, String firstName, String lastName, String phoneNumber, Date birthDate, String city, String address, Subscription subscription) {
+    this.email = email;
+    this.hashedPassword = hashedPassword;
+    this.lastName = lastName;
+    this.phoneNumber = phoneNumber;
+    this.birthDate = birthDate;
+    this.city = city;
+    this.address = address;
+    this.subscription = subscription;
+
+  }
 }
