@@ -2,9 +2,14 @@ package ma.ensias.titsuite2_0.entities;
 
 import lombok.*;
 import ma.ensias.titsuite2_0.enums.Subscription;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.Set;
 
 @Entity
@@ -12,7 +17,7 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Setter @Getter
-public class Customer {
+public class Customer implements UserDetails {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -70,5 +75,40 @@ public class Customer {
     this.address = address;
     this.subscription = subscription;
 
+  }
+
+  @Override
+  public Collection<? extends GrantedAuthority> getAuthorities() {
+    return Arrays.asList(new SimpleGrantedAuthority("CUSTOMER_ROLE"));
+  }
+
+  @Override
+  public String getPassword() {
+    return hashedPassword;
+  }
+
+  @Override
+  public String getUsername() {
+    return email;
+  }
+
+  @Override
+  public boolean isAccountNonExpired() {
+    return true;
+  }
+
+  @Override
+  public boolean isAccountNonLocked() {
+    return true;
+  }
+
+  @Override
+  public boolean isCredentialsNonExpired() {
+    return false;
+  }
+
+  @Override
+  public boolean isEnabled() {
+    return false;
   }
 }
