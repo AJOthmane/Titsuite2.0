@@ -6,7 +6,7 @@
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
-../Docker/Titsuite2_0-0.0.1-SNAPSHOT.jar
+/Docker/Titsuite2_0-0.0.1-SNAPSHOT.jar
 ../terraform-gke/.terraform
 ../terraform-gke/.terraform.lock.hcl
 ../terraform-gke/.terraform.tfstate.lock.info
