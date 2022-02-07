@@ -59,4 +59,4 @@ public class Customer {
   @OneToMany
   private Set<Offer> offers;
 
-}
+  }
