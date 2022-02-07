@@ -15,11 +15,6 @@ public class CustomerController {
     @Autowired
     CustomerService customerService;
 
-    @PostMapping("/register")
-    public boolean signUp(@RequestBody CustomerForm data)
-    {
-        return customerService.signUp(data);
-    }
 
 
 }
