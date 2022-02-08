@@ -1,0 +1,11 @@
+credentials        = "./account.json"
+project_id         = "airy-media-335812"
+region             = "us-west1"
+zones              = ["us-west1-a", "us-west1-b", "us-west1-c"]
+name               = "titsuite-cluster"
+machine_type       = "e2-small"
+min_count          = 1
+max_count          = 2
+disk_size_gb       = 20
+service_account    = "iac-846@airy-media-335812.iam.gserviceaccount.com"
+initial_node_count = 1

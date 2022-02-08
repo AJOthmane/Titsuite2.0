@@ -1,2 +1,4 @@
 # Titsuite2.0
-ne plateforme qui va permettre aux professions libérales et auto-entrepreneurs d’exposer leurs services aux particuliers.
+Une plateforme qui va permettre aux professions libérales et auto-entrepreneurs d’exposer leurs services aux particuliers.
+## Schema BD
+![](Ressources/images/SchemaBD.png)
