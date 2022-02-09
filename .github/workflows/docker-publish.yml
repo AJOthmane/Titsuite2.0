@@ -24,7 +24,6 @@ jobs:
       run: |
         cd Titsuite2.0-project/  
         mvn clean package
-        ls target
       
     - name: Copy Jar to Docker directory
       run: |  
