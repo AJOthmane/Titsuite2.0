@@ -24,13 +24,11 @@ jobs:
       run: |
         cd Titsuite2.0-project/  
         mvn clean package
-        ls target
       
     - name: Copy Jar to Docker directory
       run: |  
           pwd
           cp Titsuite2.0-project/target/Titsuite2_0-0.0.1-SNAPSHOT.jar Docker/
-          ls Docker/
       
     - name: Build the Docker image
       run: | 
